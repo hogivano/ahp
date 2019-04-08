@@ -31,15 +31,21 @@ Normalisasi
           @foreach($i->NilaiNormalisasi1 as $j)
           <td style="text-align:center">{{ $j->nilai }}</td>
           @endforeach
+          @if($i->SkorNormalisasiKriteria != null)
           <td style="text-align:center">{{ $i->SkorNormalisasiKriteria->skor }}</td>
           <td style="text-align:center">{{ $i->SkorNormalisasiKriteria->persen }} %</td>
+          @endif
         </tr>
-        <?php $sumSkor = $sumSkor + $i->SkorNormalisasiKriteria->skor; $sumPersen = $sumPersen + $i->SkorNormalisasiKriteria->persen ?>
+          @if($i->SkorNormalisasiKriteria != null)
+          <?php $sumSkor = $sumSkor + $i->SkorNormalisasiKriteria->skor; $sumPersen = $sumPersen + $i->SkorNormalisasiKriteria->persen ?>
+          @endif
         @endforeach
         <tr>
           <th></th>
           @foreach($kriteria as $i)
-          <th style="text-align:center">{{ $i->TotalNormalisasiKriteria->nilai }}</th>
+            @if($i->TotalNormalisasiKriteria != null)
+            <th style="text-align:center">{{ $i->TotalNormalisasiKriteria->nilai }}</th>
+            @endif
           @endforeach
           <th style="text-align:center">{{ $sumSkor }}</th>
           <th style="text-align:center">{{ $sumPersen }}</th>

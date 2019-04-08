@@ -77,6 +77,7 @@ Dashboard
             </tr>
           </thead>
           <tbody>
+            @if($cekKonsistensi != null)
             <tr>
               <th>P</th>
               <td>{{ $cekKonsistensi->p }}</td>
@@ -103,6 +104,7 @@ Dashboard
                 @endif
                 )</td>
             </tr>
+            @endif
           </tbody>
         </table>
       </div>

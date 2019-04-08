@@ -357,8 +357,8 @@ CREATE TABLE `users` (
   `username` varchar(10) NOT NULL,
   `password` text NOT NULL,
   `remember_token` text,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `created_at` timestamp,
+  `updated_at` timestamp
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --

@@ -111,7 +111,9 @@ class NilaiKriteriaController extends Controller
         # code...
         $cek = NilaiKriteria::where('id_kriteria_1', $kriteria[$i]['id'])->where('id_kriteria_2', $kriteria[$i]['id'])->first();
         if ($cek){
-          return response()->json($cek);
+          $update = NilaiKriteria::where('id', $cek->id)->update([
+            'nilai' => 1
+          ]);
         } else {
           $new = new NilaiKriteria();
           $new->id_kriteria_1 = $kriteria[$i]['id'];
